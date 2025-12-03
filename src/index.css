@@ -1,0 +1,116 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  word-spacing: 0.25rem;
+  letter-spacing: 0.15rem;
+}
+
+/* Center everything on the page */
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #050008 0%, #12052a 25%, #041a3f 55%, #0a3c5f 80%, #1ccf8f 100%);
+  background-size: 400% 400%;
+  animation: body-gradient 30s ease infinite;
+}
+
+.home-div {
+    width: 1200px;
+    height: 600px;
+    background: linear-gradient(135deg, #05070f 0%, #0a1a2a 35%, #0f2f3f 70%, #1f6c68 100%);
+    border-radius: 20px;
+    transform-style: preserve-3d;
+    box-shadow: 5px 15px 20px rgba(0,0,0,0.4), 0 0 50px rgba(255, 255, 255, 0.6), 0 0 80px rgba(255, 255, 255, 0.4);
+    border: 2.5px solid #eee;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Glow blur layer */
+.home-div::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    border-radius: inherit;
+    opacity: 0.8;
+    filter: blur(20px);
+    z-index: -1;
+    transform: scale(1.1);
+}
+
+.content {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding: 40px;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    line-gap-override: 25px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.home-h1{
+  margin-top: 150px;
+  font-size: 5rem;
+}
+.home-p{
+  font-size: 2rem;
+}
+
+.home-button {
+    padding: 12px 20px;
+    width: 80%;
+    margin: auto auto;
+    font-size: 2rem;
+    font-weight: 600;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: linear-gradient(45deg, #23d5ab, #23a6d5, #e73c7e, #ee7752); /* inverse order */
+    background-size: 400% 400%;
+    animation: button-gradient 8s ease infinite;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.home-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+}
+
+/* Active click effect */
+.home-button:active {
+    transform: translateY(1px);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
+/* Gradient animation */
+@keyframes button-gradient {
+    0% { background-position: 0% 50%; }
+    25%{ background-position: 50% 50%; }
+    50% { background-position: 100% 50%; }
+    75%{ background-position: 50% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes body-gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
