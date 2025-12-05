@@ -20,7 +20,7 @@ export default class Room{
             message
         });
 
-        this.subscribers.forEach(subscriber => subscriber.socket.send(JSON.stringify({message, username, id: this.id})));
+        this.subscribers.forEach(subscriber => subscriber.socket.send(JSON.stringify({message, action: "chat", username, id: this.id})));
     }
 
     isSubscribed(socket){

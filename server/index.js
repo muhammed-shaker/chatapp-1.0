@@ -1,11 +1,13 @@
 import express from 'express';
 import { WebSocketServer } from "ws";
+import cors from 'cors';
 import http from 'http';
 import SubscriptionManager from './lib/Subscription.js';
 import Client from './lib/Client.js';
 
 
 const app = express();
+app.use(cors());
 app.use(express.json());
 
 
@@ -15,7 +17,7 @@ app.post("/api/room", (req, res) =>{
 
     const id = subscriptionsManager.createRoom();
 
-    res.json({sucess: true, id});
+    res.json({success: true, id});
 
 });
 
